@@ -1,6 +1,6 @@
 <script setup>
-import { getUserOrder } from '@/apis/order'
-import { onMounted, ref } from 'vue'
+import { getUserOrder } from "@/apis/order";
+import { onMounted, ref } from "vue";
 // tab列表
 const tabTypes = [
   { name: "all", label: "全部订单" },
@@ -9,50 +9,49 @@ const tabTypes = [
   { name: "receive", label: "待收货" },
   { name: "comment", label: "待评价" },
   { name: "complete", label: "已完成" },
-  { name: "cancel", label: "已取消" }
-]
+  { name: "cancel", label: "已取消" },
+];
 // 获取订单列表
-const orderList = ref([])
-const total = ref(0)
+const orderList = ref([]);
+const total = ref(0);
 const params = ref({
   orderState: 0,
   page: 1,
-  pageSize: 2
-})
+  pageSize: 2,
+});
 const getOrderList = async () => {
-  const res = await getUserOrder(params.value)
-  orderList.value = res.result.items
-  total.value = res.result.counts
-}
+  const res = await getUserOrder(params.value);
+  orderList.value = res.result.items;
+  total.value = res.result.counts;
+};
 
-onMounted(() => getOrderList())
+onMounted(() => getOrderList());
 
 // tab切换
-const tabChange = (type) => {
-  console.log(type)
-  params.value.orderState = type
-  getOrderList()
-}
+const tabChange = type => {
+  console.log(type);
+  params.value.orderState = type;
+  getOrderList();
+};
 
 // 页数切换
-const pageChange = (page) => {
-  console.log(page)
-  params.value.page = page
-  getOrderList()
-}
+const pageChange = page => {
+  console.log(page);
+  params.value.page = page;
+  getOrderList();
+};
 
-
-const fomartPayState = (payState) => {
+const fomartPayState = payState => {
   const stateMap = {
-    1: '待付款',
-    2: '待发货',
-    3: '待收货',
-    4: '待评价',
-    5: '已完成',
-    6: '已取消'
-  }
-  return stateMap[payState]
-}
+    1: "待付款",
+    2: "待发货",
+    3: "待收货",
+    4: "待评价",
+    5: "已完成",
+    6: "已取消",
+  };
+  return stateMap[payState];
+};
 </script>
 
 <template>
@@ -115,12 +114,8 @@ const fomartPayState = (payState) => {
                 <p>在线支付</p>
               </div>
               <div class="column action">
-                <el-button v-if="order.orderState === 1" type="primary" size="small">
-                  立即付款
-                </el-button>
-                <el-button v-if="order.orderState === 3" type="primary" size="small">
-                  确认收货
-                </el-button>
+                <el-button v-if="order.orderState === 1" type="primary" size="small">立即付款</el-button>
+                <el-button v-if="order.orderState === 3" type="primary" size="small">确认收货</el-button>
                 <p><a href="javascript:;">查看详情</a></p>
                 <p v-if="[2, 3, 4, 5].includes(order.orderState)">
                   <a href="javascript:;">再次购买</a>
@@ -134,12 +129,15 @@ const fomartPayState = (payState) => {
           </div>
           <!-- 分页 -->
           <div class="pagination-container">
-            <el-pagination :total="total" @current-change="pageChange" :page-size="params.pageSize" background
+            <el-pagination
+              :total="total"
+              @current-change="pageChange"
+              :page-size="params.pageSize"
+              background
               layout="prev, pager, next" />
           </div>
         </div>
       </div>
-
     </el-tabs>
   </div>
 </template>
@@ -211,7 +209,7 @@ const fomartPayState = (payState) => {
       text-align: center;
       padding: 20px;
 
-      >p {
+      > p {
         padding-top: 10px;
       }
 

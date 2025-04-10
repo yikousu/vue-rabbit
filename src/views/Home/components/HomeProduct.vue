@@ -1,15 +1,15 @@
 <script setup>
-import HomePanel from './HomePanel.vue'
-import { getGoodsAPI } from '@/apis/home'
-import { onMounted, ref } from 'vue'
-import GoodsItem from './GoodsItem.vue'
+import HomePanel from "./HomePanel.vue";
+import { getGoodsAPI } from "@/apis/home";
+import { onMounted, ref } from "vue";
+import GoodsItem from "./GoodsItem.vue";
 // 获取数据列表
-const goodsProduct = ref([])
+const goodsProduct = ref([]);
 const getGoods = async () => {
-  const res = await getGoodsAPI()
-  goodsProduct.value = res.result
-}
-onMounted(() => getGoods())
+  const res = await getGoodsAPI();
+  goodsProduct.value = res.result;
+};
+onMounted(() => getGoods());
 </script>
 
 <template>
@@ -33,7 +33,7 @@ onMounted(() => getGoods())
   </div>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .home-product {
   background: #fff;
   margin-top: 20px;
@@ -120,8 +120,6 @@ onMounted(() => getGoods())
         }
       }
     }
-
-
   }
 }
 </style>

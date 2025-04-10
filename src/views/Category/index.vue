@@ -1,12 +1,9 @@
 <script setup>
-
-import GoodsItem from '../Home/components/GoodsItem.vue'
-import { useBanner } from './composables/useBanner'
-import { useCategory } from './composables/useCategory'
-const { bannerList } = useBanner()
-const { categoryData } = useCategory()
-
-
+import GoodsItem from "../Home/components/GoodsItem.vue";
+import { useBanner } from "./composables/useBanner";
+import { useCategory } from "./composables/useCategory";
+const { bannerList } = useBanner();
+const { categoryData } = useCategory();
 </script>
 
 <template>
@@ -23,7 +20,7 @@ const { categoryData } = useCategory()
       <div class="home-banner">
         <el-carousel height="500px">
           <el-carousel-item v-for="item in bannerList" :key="item.id">
-            <img :src="item.imgUrl" alt="">
+            <img :src="item.imgUrl" alt="" />
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -50,7 +47,6 @@ const { categoryData } = useCategory()
   </div>
 </template>
 
-
 <style scoped lang="scss">
 .top-category {
   h3 {
@@ -73,7 +69,6 @@ const { categoryData } = useCategory()
       li {
         width: 168px;
         height: 160px;
-
 
         a {
           text-align: center;
@@ -134,7 +129,6 @@ const { categoryData } = useCategory()
   width: 1240px;
   height: 500px;
   margin: 0 auto;
-
 
   img {
     width: 100%;

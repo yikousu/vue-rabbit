@@ -1,21 +1,18 @@
 <script setup>
-import { getLikeListAPI } from '@/apis/user'
-import { useUserStore } from '@/stores/userStore'
-import { onMounted, ref } from 'vue'
-import GoodsItem from '@/views/Home/components/GoodsItem.vue'
-const userStore = useUserStore()
+import { getLikeListAPI } from "@/apis/user";
+import { useUserStore } from "@/stores/userStore";
+import { onMounted, ref } from "vue";
+import GoodsItem from "@/views/Home/components/GoodsItem.vue";
+const userStore = useUserStore();
 
-
-const likeList = ref([])
+const likeList = ref([]);
 
 const getLikeList = async () => {
-  const res = await getLikeListAPI({ limit: 4 })
-  likeList.value = res.result
-}
+  const res = await getLikeListAPI({ limit: 4 });
+  likeList.value = res.result;
+};
 
-onMounted(() => getLikeList())
-
-
+onMounted(() => getLikeList());
 </script>
 
 <template>
@@ -136,7 +133,6 @@ onMounted(() => getLikeList())
       font-size: 22px;
       font-weight: 400;
     }
-
   }
 
   .goods-list {

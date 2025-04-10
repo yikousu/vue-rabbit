@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="container">
@@ -70,7 +68,7 @@
         }
 
         &:before {
-          content: '';
+          content: "";
           display: none;
           width: 6px;
           height: 6px;

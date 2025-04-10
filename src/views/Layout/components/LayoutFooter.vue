@@ -5,13 +5,25 @@
       <div class="container">
         <dl>
           <dt>客户服务</dt>
-          <dd><i class="iconfont icon-kefu"></i> 在线客服</dd>
-          <dd><i class="iconfont icon-question"></i> 问题反馈</dd>
+          <dd>
+            <i class="iconfont icon-kefu"></i>
+            在线客服
+          </dd>
+          <dd>
+            <i class="iconfont icon-question"></i>
+            问题反馈
+          </dd>
         </dl>
         <dl>
           <dt>关注我们</dt>
-          <dd><i class="iconfont icon-weixin"></i> 公众号</dd>
-          <dd><i class="iconfont icon-weibo"></i> 微博</dd>
+          <dd>
+            <i class="iconfont icon-weixin"></i>
+            公众号
+          </dd>
+          <dd>
+            <i class="iconfont icon-weibo"></i>
+            微博
+          </dd>
         </dl>
         <dl>
           <dt>下载APP</dt>
@@ -24,7 +36,10 @@
         </dl>
         <dl>
           <dt>服务热线</dt>
-          <dd class="hotline">400-0000-000 <small>周一至周日 8:00-18:00</small></dd>
+          <dd class="hotline">
+            400-0000-000
+            <small>周一至周日 8:00-18:00</small>
+          </dd>
         </dl>
       </div>
     </div>
@@ -63,7 +78,7 @@
   </footer>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .app_footer {
   overflow: hidden;
   background-color: #f5f5f5;

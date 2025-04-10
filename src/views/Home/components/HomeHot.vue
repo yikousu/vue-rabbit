@@ -1,15 +1,13 @@
 <script setup>
-import HomePanel from './HomePanel.vue'
-import { getHotAPI } from '@/apis/home'
-import { onMounted, ref } from 'vue'
-const hotList = ref([])
+import HomePanel from "./HomePanel.vue";
+import { getHotAPI } from "@/apis/home";
+import { onMounted, ref } from "vue";
+const hotList = ref([]);
 const getHotList = async () => {
-  const res = await getHotAPI()
-  hotList.value = res.result
-}
-onMounted(() => getHotList())
-
-
+  const res = await getHotAPI();
+  hotList.value = res.result;
+};
+onMounted(() => getHotList());
 </script>
 
 <template>
@@ -17,7 +15,7 @@ onMounted(() => getHotList())
     <ul class="goods-list">
       <li v-for="item in hotList" :key="item.id">
         <RouterLink to="/">
-          <img v-img-lazy="item.picture" alt="">
+          <img v-img-lazy="item.picture" alt="" />
           <p class="name">{{ item.title }}</p>
           <p class="desc">{{ item.alt }}</p>
         </RouterLink>
@@ -26,7 +24,7 @@ onMounted(() => getHotList())
   </HomePanel>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .goods-list {
   display: flex;
   justify-content: space-between;
@@ -35,7 +33,7 @@ onMounted(() => getHotList())
   li {
     width: 306px;
     height: 406px;
-    transition: all .5s;
+    transition: all 0.5s;
 
     &:hover {
       transform: translate3d(0, -3px, 0);

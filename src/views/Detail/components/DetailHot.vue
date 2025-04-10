@@ -1,38 +1,37 @@
 <script setup>
 // 以24小时热榜获取数据渲染模版
-import { getHotGoodsAPI } from '@/apis/detail'
-import { computed } from 'vue'
-import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { getHotGoodsAPI } from "@/apis/detail";
+import { computed } from "vue";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 // 设计props参数 适配不同的title和数据
 
 const props = defineProps({
   hotType: {
-    type: Number
-  }
-})
+    type: Number,
+  },
+});
 
 // 适配title 1 - 24小时热榜  2-周热榜
 const TYPEMAP = {
-  1: '24小时热榜',
-  2: '周热榜'
-}
-const title = computed(() => TYPEMAP[props.hotType])
+  1: "24小时热榜",
+  2: "周热榜",
+};
+const title = computed(() => TYPEMAP[props.hotType]);
 
 // 1. 封装接口
 // 2. 调用接口渲染模版
-const hotList = ref([])
-const route = useRoute()
+const hotList = ref([]);
+const route = useRoute();
 const getHotList = async () => {
   const res = await getHotGoodsAPI({
     id: route.params.id,
-    type: props.hotType
-  })
-  hotList.value = res.result
-}
-onMounted(() => getHotList())
+    type: props.hotType,
+  });
+  hotList.value = res.result;
+};
+onMounted(() => getHotList());
 </script>
-
 
 <template>
   <div class="goods-hot">
@@ -46,7 +45,6 @@ onMounted(() => getHotList())
     </RouterLink>
   </div>
 </template>
-
 
 <style scoped lang="scss">
 .goods-hot {

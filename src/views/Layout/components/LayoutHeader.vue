@@ -1,10 +1,10 @@
 <script setup>
-import LayoutHeaderUl from './LayoutHeaderUl.vue'
-import HeaderCart from './HeaderCart.vue'
+import LayoutHeaderUl from "./LayoutHeaderUl.vue";
+import HeaderCart from "./HeaderCart.vue";
 </script>
 
 <template>
-  <header class='app-header'>
+  <header class="app-header">
     <div class="container">
       <h1 class="logo">
         <RouterLink to="/">小兔鲜</RouterLink>
@@ -13,16 +13,15 @@ import HeaderCart from './HeaderCart.vue'
       <LayoutHeaderUl />
       <div class="search">
         <i class="iconfont icon-search"></i>
-        <input type="text" placeholder="搜一搜">
+        <input type="text" placeholder="搜一搜" />
       </div>
       <!-- 头部购物车 -->
       <HeaderCart />
     </div>
-</header>
+  </header>
 </template>
 
-
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .app-header {
   background: #fff;
 
@@ -39,10 +38,9 @@ import HeaderCart from './HeaderCart.vue'
       height: 132px;
       width: 100%;
       text-indent: -9999px;
-      background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
+      background: url("@/assets/images/logo.png") no-repeat center 18px / contain;
     }
   }
-
 
   .search {
     width: 170px;

@@ -1,18 +1,17 @@
 <script setup>
-import HomePanel from './HomePanel.vue'
-import { findNewAPI } from '@/apis/home'
-import { onMounted, ref } from 'vue'
+import HomePanel from "./HomePanel.vue";
+import { findNewAPI } from "@/apis/home";
+import { onMounted, ref } from "vue";
 
 // 获取数据
-const newList = ref([])
+const newList = ref([]);
 
 const getNewList = async () => {
-  const res = await findNewAPI()
-  newList.value = res.result
-}
+  const res = await findNewAPI();
+  newList.value = res.result;
+};
 
-onMounted(() => getNewList())
-
+onMounted(() => getNewList());
 </script>
 
 <template>
@@ -40,8 +39,7 @@ onMounted(() => getNewList())
   -->
 </template>
 
-
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .goods-list {
   display: flex;
   justify-content: space-between;
@@ -52,7 +50,7 @@ onMounted(() => getNewList())
     height: 406px;
 
     background: #f0f9f4;
-    transition: all .5s;
+    transition: all 0.5s;
 
     &:hover {
       transform: translate3d(0, -3px, 0);

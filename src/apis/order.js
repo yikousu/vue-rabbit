@@ -1,4 +1,4 @@
-import request from '@/utils/http'
+import request from "@/utils/http";
 
 /*
 params: {
@@ -8,11 +8,10 @@ params: {
 }
 */
 
-
-export const getUserOrder = (params) => {
+export const getUserOrder = params => {
   return request({
-    url: '/member/order',
-    method: 'GET',
-    params
-  })
-}
+    url: "/member/order",
+    method: "GET",
+    params,
+  });
+};
