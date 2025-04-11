@@ -9,9 +9,9 @@ params: {
 */
 
 export const getUserOrder = params => {
-  return request({
-    url: "/member/order",
-    method: "GET",
-    params,
-  });
+    return request({
+        url: "/member/order",
+        method: "GET",
+        params,
+    });
 };

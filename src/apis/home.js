@@ -3,14 +3,14 @@ import httpInstance from "@/utils/http";
 // 获取banner
 
 export function getBannerAPI(params = {}) {
-  // 默认为1 商品为2
-  const { distributionSite = "1" } = params;
-  return httpInstance({
-    url: "/home/banner",
-    params: {
-      distributionSite,
-    },
-  });
+    // 默认为1 商品为2
+    const { distributionSite = "1" } = params;
+    return httpInstance({
+        url: "/home/banner",
+        params: {
+            distributionSite,
+        },
+    });
 }
 
 /**
@@ -19,9 +19,9 @@ export function getBannerAPI(params = {}) {
  * @return {*}
  */
 export const findNewAPI = () => {
-  return httpInstance({
-    url: "/home/new",
-  });
+    return httpInstance({
+        url: "/home/new",
+    });
 };
 
 /**
@@ -30,9 +30,9 @@ export const findNewAPI = () => {
  * @return {*}
  */
 export const getHotAPI = () => {
-  return httpInstance({
-    url: "/home/hot",
-  });
+    return httpInstance({
+        url: "/home/hot",
+    });
 };
 
 /**
@@ -41,7 +41,7 @@ export const getHotAPI = () => {
  * @return {*}
  */
 export const getGoodsAPI = () => {
-  return httpInstance({
-    url: "/home/goods",
-  });
+    return httpInstance({
+        url: "/home/goods",
+    });
 };
